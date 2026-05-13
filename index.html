@@ -744,27 +744,9 @@
         body.lang-bm .bm { display: block; }
         body.lang-bm .en { display: none; }
 
-        /* Loading Animation */
-        .page-loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary-green), var(--secondary-green)); display: flex; align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.5s ease, visibility 0.5s ease; }
-        .page-loader.hidden { opacity: 0; visibility: hidden; }
-        .loader { text-align: center; }
-        .loader-icon { font-size: 4rem; animation: loaderBounce 1s ease infinite; }
-        .loader-text { color: var(--white); font-size: 1.2rem; margin-top: 20px; font-weight: 500; }
-        @keyframes loaderBounce { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
-
     </style>
 </head>
 <body>
-
-    <div class="page-loader" id="pageLoader">
-        <div class="loader">
-            <div class="loader-icon">🌿</div>
-            <div class="loader-text">
-                <span class="en">Loading...</span>
-                <span class="bm">Memuatkan...</span>
-            </div>
-        </div>
-    </div>
 
     <div class="particles" id="particles"></div>
 
@@ -848,10 +830,10 @@
                 <span class="bm">Terokai, dokumentasikan dan kongsikan cerita mengenai inisiatif pelancongan lestari, amalan pelancongan mesra alam, dan usaha pemuliharaan alam sekitar dalam industri pelancongan.</span>
             </p>
             <div class="hero-buttons">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScID9MbgILPFvQdEE47z19mEL7TwtDbJitIh97KDoRzxtF75g/viewform" target="_blank" class="btn btn-primary">
-                    <i class="fas fa-user-plus"></i>
-                    <span class="en">Register Now</span>
-                    <span class="bm">Daftar Sekarang</span>
+                <a href="javascript:void(0)" class="btn btn-primary" style="opacity: 0.6; cursor: not-allowed; pointer-events: none;">
+                    <i class="fas fa-lock"></i>
+                    <span class="en">Registration Closed</span>
+                    <span class="bm">Pendaftaran Ditutup</span>
                 </a>
                 <a href="#about" class="btn btn-secondary">
                     <i class="fas fa-play-circle"></i>
@@ -1377,8 +1359,8 @@
                 </div>
                 <div class="judging-row">
                     <span>
-                        <span class="en">🎬 Video Editing</span>
-                        <span class="bm">🎬 Suntingan Video</span>
+                        <span class="en">🎬 Videography</span>
+                        <span class="bm">🎬 Suntingan & Visual Video</span>
                     </span>
                     <span class="percentage">20%</span>
                 </div>
@@ -1411,18 +1393,18 @@
             </div>
             <div class="links-grid">
                 <div class="link-card">
-                    <i class="fas fa-clipboard-list"></i>
-                    <h3>
+                    <i class="fas fa-clipboard-list" style="color: #999;"></i>
+                    <h3 style="color: #666;">
                         <span class="en">Registration</span>
                         <span class="bm">Pendaftaran</span>
                     </h3>
                     <p>
-                        <span class="en">Sign up for the competition now</span>
-                        <span class="bm">Daftar untuk pertandingan sekarang</span>
+                        <span class="en">Registration for this event has ended</span>
+                        <span class="bm">Pendaftaran untuk acara ini telah tamat</span>
                     </p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScID9MbgILPFvQdEE47z19mEL7TwtDbJitIh97KDoRzxtF75g/viewform" target="_blank">
-                        <span class="en">Register Now</span>
-                        <span class="bm">Daftar Sekarang</span>
+                    <a href="javascript:void(0)" style="background: #ccc; color: #666; box-shadow: none; cursor: not-allowed; pointer-events: none;">
+                        <span class="en">Registration Closed</span>
+                        <span class="bm">Pendaftaran Ditutup</span>
                     </a>
                 </div>
                 <div class="link-card">
@@ -1578,13 +1560,6 @@
     </div>
 
     <script>
-        // Page Loader
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('pageLoader').classList.add('hidden');
-            }, 1000);
-        });
-
         // Create floating particles
         function createParticles() {
             const container = document.getElementById('particles');
